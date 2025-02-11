@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_transparent"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/guideLayout">
+
+    <!-- Imagen para el primer paso -->
+    <ImageView
+        android:id="@+id/imageGuideStep"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="85dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <!-- Imagen que resalta el icono -->
+    <ImageView
+        android:id="@+id/pulseImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pulse"
+        android:layout_gravity="center"
+        android:elevation="10dp"
+        android:visibility="gone"/>
+
+    <!-- Texto explicativo del paso -->
+    <TextView
+        android:id="@+id/textStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_button_1"
+        android:background="@drawable/button_normal"
+        android:layout_margin="50dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:textSize="23sp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:alpha="0"/>
+
+    <!-- Botón para el siguiente paso -->
+
+    <!-- Botón para salir de la guía -->
+    <Button
+        android:id="@+id/next_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/button_background"
+        android:padding="20dp"
+        android:text="@string/next"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <android.widget.Button
+        android:id="@+id/exit_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jump_guide"
+        android:layout_gravity="right|top"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/purple"
+        android:background="@drawable/button_exit"/>
+    <View
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple"
+        android:visibility="gone" />
+
+</FrameLayout>
