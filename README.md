@@ -62,3 +62,16 @@ Este proyecto ha sido una gran oportunidad para mejorar habilidades en el desarr
 
 ## Capturas de Pantalla
 # Spyro The Dragon - Guía Interactiva y Easter Eggs
+<img src="https://github.com/user-attachments/assets/175531e8-6fa0-4a5e-915a-34dd803715f4" width="300"/>
+<img src="https://github.com/user-attachments/assets/c76a48f1-e535-4474-9333-c962b28127ae" width="300"/>
+<img src="https://github.com/user-attachments/assets/2ca70667-160a-4d5b-b83b-654d60e28036" width="300"/>
+<img src="https://github.com/user-attachments/assets/6e66fa3a-23e8-429f-8ee5-98c74430d9c3" width="300"/>
+<img src="https://github.com/user-attachments/assets/f538b85c-14cc-4ccf-abf9-2136b717aabf" width="300"/>
+<img src="https://github.com/user-attachments/assets/f6c1828b-e88f-4df5-a1de-9c43de3c2824" width="300"/>
+<img src="https://github.com/user-attachments/assets/e1d97e2f-45d0-4017-abc0-7d9d721d37d7" width="300"/>
+<img src="https://github.com/user-attachments/assets/540488f8-d97c-4194-b98d-18ccc0001e56" width="300"/>
+<img src="https://github.com/user-attachments/assets/4a8c02bf-2767-47d0-a8a3-1c27d4cf66c9" width="300"/>
+<img src="https://github.com/user-attachments/assets/8967aef9-529c-46bd-b222-2431421b8859" width="300"/>
+<img src="https://github.com/user-attachments/assets/724e722c-353a-40d3-a95e-1537faedbc6c" width="300"/>
+<img src="https://github.com/user-attachments/assets/fd6eed83-faf1-42dc-bab4-893774bd3eb2" width="300"/>
+<img src="https://github.com/user-attachments/assets/35e5e3ce-d413-4dc5-bb27-4d3f3de90086" width="300"/>
