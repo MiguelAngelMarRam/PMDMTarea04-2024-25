@@ -73,5 +73,5 @@ Este proyecto ha sido una gran oportunidad para mejorar habilidades en el desarr
 <img src="https://github.com/user-attachments/assets/4a8c02bf-2767-47d0-a8a3-1c27d4cf66c9" width="300"/>
 <img src="https://github.com/user-attachments/assets/8967aef9-529c-46bd-b222-2431421b8859" width="300"/>
 <img src="https://github.com/user-attachments/assets/724e722c-353a-40d3-a95e-1537faedbc6c" width="300"/>
-<img src="https://github.com/user-attachments/assets/fd6eed83-faf1-42dc-bab4-893774bd3eb2" width="300"/>
+<img src="https://github.com/user-attachments/assets/fd6eed83-faf1-42dc-bab4-893774bd3eb2" width="700"/>
 <img src="https://github.com/user-attachments/assets/35e5e3ce-d413-4dc5-bb27-4d3f3de90086" width="300"/>
