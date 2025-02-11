@@ -1,6 +1,8 @@
 package dam.pmdm.spyrothedragon.ui;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import dam.pmdm.spyrothedragon.FireAnimationView;
 import dam.pmdm.spyrothedragon.R;
 import dam.pmdm.spyrothedragon.models.Character;
 import dam.pmdm.spyrothedragon.adapters.CharactersAdapter;
@@ -26,25 +29,45 @@ import dam.pmdm.spyrothedragon.databinding.FragmentCharactersBinding;
 public class CharactersFragment extends Fragment {
 
     private FragmentCharactersBinding binding;
-
     private RecyclerView recyclerView;
     private CharactersAdapter adapter;
     private List<Character> charactersList;
+    private FireAnimationView fireAnimationView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentCharactersBinding.inflate(inflater, container, false);
-        // Inicializamos el RecyclerView y el adaptador
+        View root = binding.getRoot();
+
         recyclerView = binding.recyclerViewCharacters;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         charactersList = new ArrayList<>();
         adapter = new CharactersAdapter(charactersList);
         recyclerView.setAdapter(adapter);
 
+        // Referencia correcta a la animación
+        fireAnimationView = binding.fireAnimationView;
+
         // Cargamos los personajes desde el XML
         loadCharacters();
-        return binding.getRoot();
+
+        // Configurar el listener de pulsación prolongada en Spyro
+        adapter.setOnSpyroLongPressListener(() -> {
+            if (fireAnimationView != null) {
+                fireAnimationView.setVisibility(View.VISIBLE);
+                fireAnimationView.startAnimation();
+
+                // Ocultar la animación después de 2 segundos
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    if (fireAnimationView != null) {
+                        fireAnimationView.setVisibility(View.GONE);
+                    }
+                }, 2000);
+            }
+        });
+
+        return root;
     }
 
     @Override
@@ -55,10 +78,8 @@ public class CharactersFragment extends Fragment {
 
     private void loadCharacters() {
         try {
-            // Cargamos el archivo XML desde res/xml (NOTA: ahora se usa R.xml.characters)
             InputStream inputStream = getResources().openRawResource(R.raw.characters);
 
-            // Crear un parser XML
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
@@ -104,5 +125,4 @@ public class CharactersFragment extends Fragment {
             e.printStackTrace();
         }
     }
-
 }

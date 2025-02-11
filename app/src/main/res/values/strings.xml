@@ -4,6 +4,19 @@
     <string name="characters">Personajes</string>
     <string name="collectibles">Coleccionables</string>
     <string name="title_about">Acerca de</string>
-    <string name="text_about">Aplicación desarrollada por \n <b>Lindsay Barrero Martínez.</b></string>
+    <string name="text_about">Aplicación desarrollada por \n <b>Miguel Ángel Martínez Ramírez.</b></string>
     <string name="accept">Aceptar</string>
+    <string name="text_button_1">En la pestaña Personajes, conoce a los personajes de Spyro:\naliados, enemigos y más.\nNavega para obtener\ninformación sobre\ncada uno.</string>
+    <string name="text_button_2">Pulsando sobre Mundos,\ndescubre los mundos que Spyro explora.\nInfórmate sobre misiones y secretos que te esperan en cada lugar.</string>
+    <string name="text_button_3">No te pierdas ningún coleccionable\npulsando sobre el icono.\nAquí podrás ver todos los objetos y secretos que puedes recolectar.</string>
+    <string name="jump_guide">Saltar Guía</string>
+    <string name="next">Siguiente</string>
+    <string name="finish">Finalizar Guía</string>
+    <string name="start">Comenzar Guía</string>
+    <string name="text_initial_guide">"¡Bienvenido a la\nguía de Spyro!\n"
+               "Explora personajes, mundos y coleccionables de Spyro con esta app.\n"
+               "Navega por las secciones y conoce todos los detalles que necesitas para tu aventura.\n"
+               "¡¡¡Disfruta del viaje!!!"</string>
+    <string name="text_final_guide">¡Has terminado el tutorial! Ahora puedes explorar personajes, mundos y coleccionables. Vuelve cuando necesites más ayuda. ¡Diviértete!</string>
+    <string name="text_button_info">Descubre más sobre la app y cómo obtener las últimas actualizaciones para mejorar tu experiencia\npulsando en información</string>
 </resources>

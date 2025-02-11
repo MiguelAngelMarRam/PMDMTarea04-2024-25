@@ -1,5 +1,6 @@
 package dam.pmdm.spyrothedragon.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import dam.pmdm.spyrothedragon.FullScreenVideoActivity;
 import dam.pmdm.spyrothedragon.R;
 import dam.pmdm.spyrothedragon.adapters.CollectiblesAdapter;
 import dam.pmdm.spyrothedragon.databinding.FragmentCollectiblesBinding;
@@ -28,16 +30,23 @@ public class CollectiblesFragment extends Fragment {
     private RecyclerView recyclerView;
     private CollectiblesAdapter adapter;
     private List<Collectible> collectiblesList;
+    private int gemClickCount = 0;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentCollectiblesBinding.inflate(inflater, container, false);
         recyclerView = binding.recyclerViewCollectibles;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         collectiblesList = new ArrayList<>();
         adapter = new CollectiblesAdapter(collectiblesList);
         recyclerView.setAdapter(adapter);
+
+        // Configurar listener para detectar clics en cada collectible
+        adapter.setOnCollectibleClickListener(new CollectiblesAdapter.OnCollectibleClickListener() {
+            @Override
+            public void onCollectibleClick(Collectible collectible) {
+                handleCollectibleClick(collectible);
+            }
+        });
 
         loadCollectibles();
         return binding.getRoot();
@@ -49,6 +58,24 @@ public class CollectiblesFragment extends Fragment {
         binding = null;
     }
 
+    private void handleCollectibleClick(Collectible collectible) {
+        // Suponemos que el collectible de la gema se identifica por su propiedad "image" igual a "gems"
+        if ("gems".equalsIgnoreCase(collectible.getImage())) {
+            gemClickCount++;
+            if (gemClickCount == 4) {
+                gemClickCount = 0; // Reiniciamos el contador
+                playEasterEggVideo(); // Reproducir el video
+            }
+        } else {
+            // Si se hace clic en otro collectible, reiniciamos el contador (opcional)
+            gemClickCount = 0;
+        }
+    }
+    private void playEasterEggVideo() {
+        // Lanzar la Activity de vídeo a pantalla completa
+        Intent intent = new Intent(getContext(), FullScreenVideoActivity.class);
+        startActivity(intent);
+    }
     private void loadCollectibles() {
         try {
             InputStream inputStream = getResources().openRawResource(R.raw.collectibles);

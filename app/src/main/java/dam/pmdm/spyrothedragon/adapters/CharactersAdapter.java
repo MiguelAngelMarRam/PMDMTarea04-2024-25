@@ -16,6 +16,7 @@ import java.util.List;
 public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder> {
 
     private List<Character> list;
+    private OnSpyroLongPressListener listener;
 
     public CharactersAdapter(List<Character> charactersList) {
         this.list = charactersList;
@@ -32,9 +33,25 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Ch
         Character character = list.get(position);
         holder.nameTextView.setText(character.getName());
 
-        // Cargar la imagen (simulado con un recurso drawable)
         int imageResId = holder.itemView.getContext().getResources().getIdentifier(character.getImage(), "drawable", holder.itemView.getContext().getPackageName());
         holder.imageImageView.setImageResource(imageResId);
+
+        // Detectar la pulsación prolongada en Spyro
+        holder.itemView.setOnLongClickListener(v -> {
+            if ("Spyro".equals(character.getName()) && listener != null) {
+                listener.onSpyroLongPressed();
+                return true;
+            }
+            return false;
+        });
+    }
+
+    public interface OnSpyroLongPressListener {
+        void onSpyroLongPressed();
+    }
+
+    public void setOnSpyroLongPressListener(OnSpyroLongPressListener listener) {
+        this.listener = listener;
     }
 
     @Override
